@@ -36,7 +36,7 @@ send_req () {
 : ${ENVIRONMENT_NAME:=$PLUGIN_ENVIRONMENT_NAME}
 
 CHANNEL_ID="${PLUGIN_CHANNEL_ID:-Channels-1}"
-SPACE_ID="${PLUGIN_SPACE_ID:-Spaces-1}
+SPACE_ID="${PLUGIN_SPACE_ID:-Spaces-1}"
 
 ENVIRONMENT_ID=$(send_req "${SERVER_URL}/api/${SPACE_ID}/environments/all" | jq --arg env_name "${ENVIRONMENT_NAME}" -r '.[] | select(.Name == $env_name) | .Id')
 
